@@ -13,6 +13,8 @@ document.getElementById("test").addEventListener('click', () => {
     chrome.tabs.executeScript({
         code: '(' + modifyDOM + ')();' //argument here is a string but function.toString() returns function's code
     }, (results) => {
+
+        // TODO: sasha get results here...get this to hit
         debugger;
         //Here we have just the innerHTML and not DOM structure
         console.log('Popup script:')
