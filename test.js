@@ -11,7 +11,7 @@ document.getElementById("test").addEventListener('click', () => {
     function getWindowSentry() {
         debugger;
         console.log('Sentry:');
-        return window.Sentry;
+        return localStorage.hasSentry;
     }
 
     let hasSentry = false;
@@ -19,7 +19,7 @@ document.getElementById("test").addEventListener('click', () => {
     chrome.tabs.executeScript({
         code: '(' + getWindowSentry + ')();' //argument here is a string but function.toString() returns function's code
     }, (results) => {
-        if (!!results[0]) {
+        if (!!results[0] && results[0] === "true") {
             hasSentry = true;
         } else {
 
