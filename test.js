@@ -1,16 +1,10 @@
 document.getElementById("test").addEventListener('click', () => {
-    console.log("Popup DOM fully loaded and parsed");
-        // alert('abc')
 
     function getScripts() {
-        console.log('Tab script:');
-        console.log(document.body);
         return Array.from(document.getElementsByTagName("script")).map(h => h.outerHTML);
     }
 
     function getWindowSentry() {
-        debugger;
-        console.log('Sentry:');
         return localStorage.hasSentry;
     }
 
@@ -22,8 +16,6 @@ document.getElementById("test").addEventListener('click', () => {
         if (!!results[0] && results[0] === "true") {
             hasSentry = true;
         } else {
-
-
 
             chrome.tabs.query({
                     active: true,
