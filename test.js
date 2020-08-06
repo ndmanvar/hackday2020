@@ -37,7 +37,7 @@ document.getElementById("test").addEventListener('click', () => {
                         // alert(JSON.stringify(results));
                         if (results.length > 0 && results[0].length > 0) {
                             for (const scriptString of results[0]) {
-                                if (scriptString.includes('src=')) {
+                                if (scriptString.includes('src=') && !scriptString.includes('src="chrome-extension://')) {
                                     let srcRegEx = /src="(.*?)"/g,
                                         source = srcRegEx.exec(scriptString),
                                         scriptSrc = source[1];
