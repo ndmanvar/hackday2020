@@ -11,7 +11,6 @@ document.getElementById("test").addEventListener('click', () => {
     function getWindowSentry() {
         debugger;
         console.log('Sentry:');
-        console.log(GLOBAL.window.Sentry);
         return window.Sentry;
     }
 
